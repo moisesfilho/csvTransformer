@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Converter XLS para CSV";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+@using (Html.BeginForm("Upload", "Converter", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="Arquivo" />
+    <input type="submit" name="Enviar" id="Enviar" value="Upload" />
+}    
+</div>
