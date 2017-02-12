@@ -3,15 +3,58 @@
 }
 
 <div>
-    <h2>@ViewBag.Title</h2>
-    
+    <h3>@ViewBag.Title</h3>
+
     @Html.ValidationSummary()
 
-    <div id="upload">
+    <div id="upload" class="row">
         @using (Html.BeginForm("XlsToCsv", "Converter", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            <input type="file" name="Arquivo" id="arquivo" accept=".xls,.xlsx" />
-            <input type="submit" name="Enviar" id="Enviar" />
+            <div class="col-md-4">
+                <div class="input-group">
+                    <label class="input-group-btn">
+                        <span class="btn btn-primary">
+                            Selecionar Arquivo<input type="file" name="arquivo" id="arquivo" style="display: none;" accept=".xls,.xlsx">
+                        </span>
+                    </label>
+                    <input type="text" class="form-control" readonly="readonly">
+                </div>
+            </div>
+            <div class="col-md-1">
+                <input type="submit" class="btn btn-success" name="Enviar" id="Enviar" />
+            </div>
         }
     </div>
 </div>
+
+<script>
+    $(function () {
+
+        $(document).on('change', ':file', function () {
+            var input = $(this),
+                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [numFiles, label]);
+        });
+
+        $(document).ready(function () {
+            $(':file').on('fileselect', function (event, numFiles, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            $('#arquivo').click( function() {
+                $('.validation-summary-errors').hide();
+            });
+        });
+    });
+</script>

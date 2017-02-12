@@ -22,3 +22,16 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* Personalizando layout do sumario de erros*/
+.validation-summary-errors {
+    padding: 8px 35px 0 4px;
+    margin-bottom: 20px;
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #f00;
+    border: 1px solid #EAAFAF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
