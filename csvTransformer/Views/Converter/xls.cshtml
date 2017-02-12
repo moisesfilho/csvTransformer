@@ -4,11 +4,13 @@
 
 <div>
     <h2>@ViewBag.Title</h2>
+    
+    @Html.ValidationSummary()
 
     <div id="upload">
         @using (Html.BeginForm("Upload", "Converter", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            <input type="file" name="Arquivo" id="arquivo" />
+            <input type="file" name="Arquivo" id="arquivo" accept=".xls,.xlsx" />
             <input type="submit" name="Enviar" id="Enviar" />
         }
     </div>

@@ -252,6 +252,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Business\Converter.cs" />
+    <Compile Include="Models\Business\IConverter.cs" />
     <Compile Include="Models\Enum\FIleType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

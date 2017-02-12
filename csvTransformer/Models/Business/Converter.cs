@@ -6,7 +6,7 @@ using Excel;
 
 namespace csvTransformer.Models.Business
 {
-    public class Converter
+    public class Converter : IConverter
     {
         private FileType _fileTypeFrom;
         private FileType _fileTypeTo;
