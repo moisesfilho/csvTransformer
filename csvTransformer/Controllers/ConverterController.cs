@@ -5,27 +5,23 @@ namespace csvTransformer.Controllers
 {
     public class ConverterController : Controller
     {
-        public ActionResult Xls()
+        public ActionResult Xls(    )
         {
             return View();
         }
-
-        [HttpPost]
+        
         public ActionResult Upload()
         {
-            if (Request.Files.Count > 0)
+            if (Request.Files.Count < 0) return View("Download");
+
+            var file = Request.Files[0];
+
+            if (file != null && file.ContentLength > 0)
             {
-                var file = Request.Files[0];
-
-                if (file != null && file.ContentLength > 0)
-                {
-                    var fileName = Path.GetFileName(file.FileName);
-                }
-
-                return View("Download", file);
+                file.InputStream
             }
 
-            return View("Download");
+            return View("Download", file);
         }
     }
 }
