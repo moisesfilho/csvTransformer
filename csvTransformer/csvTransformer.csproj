@@ -323,7 +323,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Converter\Xls.cshtml" />
+    <Content Include="Views\Converter\XlcToCsv.cshtml" />
     <Content Include="Views\Converter\Download.cshtml" />
   </ItemGroup>
   <ItemGroup>

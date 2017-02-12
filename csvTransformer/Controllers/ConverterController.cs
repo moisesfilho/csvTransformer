@@ -19,7 +19,7 @@ namespace csvTransformer.Controllers
             _converter = converter;
         }
 
-        public ActionResult Xls()
+        public ActionResult XlcToCsv()
         {
             return View();
         }
