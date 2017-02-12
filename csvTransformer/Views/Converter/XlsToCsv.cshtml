@@ -8,7 +8,7 @@
     @Html.ValidationSummary()
 
     <div id="upload">
-        @using (Html.BeginForm("Upload", "Converter", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("XlsToCsv", "Converter", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <input type="file" name="Arquivo" id="arquivo" accept=".xls,.xlsx" />
             <input type="submit" name="Enviar" id="Enviar" />
