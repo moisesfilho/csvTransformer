@@ -15,14 +15,14 @@ namespace csvTransformer.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Desenvolvido por Moisés Filho";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Informações para contato:";
 
             return View();
         }
